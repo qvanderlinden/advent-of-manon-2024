@@ -9,15 +9,14 @@ import { buttonVariants } from "@/components/ui/button";
 function Component() {
   const searchParams = useSearchParams();
   const nextPath = searchParams.get("next");
+
   return (
     <div className="flex flex-col gap-4 items-center">
-      <div className="text-4xl italic text-red-600">
-        Welcome to Advent of Manon 2024 !
-      </div>
+      <div className="text-4xl italic">Welcome to Advent of Manon 2024 !</div>
 
       {nextPath !== null && (
         <Link
-          className={buttonVariants({ variant: "outline" })}
+          className={`${buttonVariants({ variant: "outline" })} text-black`}
           href={`/${nextPath}`}
         >
           See today&apos;s gift

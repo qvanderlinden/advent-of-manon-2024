@@ -98,7 +98,7 @@ function MorseLetter({ char }: { char: string }) {
   }
 
   return (
-    <div className="flex flex row gap-1 mr-2">
+    <div className="flex flex-row gap-1 mr-2 text-black">
       {MORSE_MAPPING[upperChar as keyof typeof MORSE_MAPPING]}
     </div>
   );
@@ -107,7 +107,7 @@ function MorseLetter({ char }: { char: string }) {
 export default function Home() {
   return (
     <div className="grid grid-rows-[auto_1fr] gap-4 place-items-center">
-      <div className="text-4xl italic text-red-600 w-fit">Day 3</div>
+      <div className="text-4xl italic w-fit">Day 3</div>
       <div className="bg-white p-4 rounded-lg flex flex-col gap-4">
         <Morse text="Malgre tous tes efforts pour me voir le moins possible, j'ai passe un bon moment" />
         <div className="w-fit self-end">

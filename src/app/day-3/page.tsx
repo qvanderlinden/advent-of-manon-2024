@@ -1,40 +1,40 @@
 const MORSE_MAPPING = {
-  A: [Dot(), Bar()],
-  B: [Bar(), Dot(), Dot(), Dot()],
-  C: [Bar(), Dot(), Bar(), Dot()],
-  D: [Bar(), Dot(), Dot()],
-  E: [Dot()],
-  F: [Dot(), Dot(), Bar(), Dot()],
-  G: [Bar(), Bar(), Dot()],
-  H: [Dot(), Dot(), Dot(), Dot()],
-  I: [Dot(), Dot()],
-  J: [Dot(), Bar(), Bar(), Bar()],
-  K: [Bar(), Dot(), Bar()],
-  L: [Dot(), Bar(), Dot(), Dot()],
-  M: [Bar(), Bar()],
-  N: [Bar(), Dot()],
-  O: [Bar(), Bar(), Bar()],
-  P: [Dot(), Bar(), Bar(), Dot()],
-  Q: [Bar(), Bar(), Dot(), Bar()],
-  R: [Dot(), Bar(), Dot()],
-  S: [Dot(), Dot(), Dot()],
-  T: [Bar()],
-  U: [Dot(), Dot(), Bar()],
-  V: [Dot(), Dot(), Dot(), Bar()],
-  W: [Dot(), Bar(), Bar()],
-  X: [Bar(), Dot(), Dot(), Bar()],
-  Y: [Bar(), Dot(), Bar(), Bar()],
-  Z: [Bar(), Bar(), Dot(), Dot()],
-  1: [Dot(), Bar(), Bar(), Bar(), Bar()],
-  2: [Dot(), Dot(), Bar(), Bar(), Bar()],
-  3: [Dot(), Dot(), Dot(), Bar(), Bar()],
-  4: [Dot(), Dot(), Dot(), Dot(), Bar()],
-  5: [Dot(), Dot(), Dot(), Dot(), Dot()],
-  6: [Bar(), Dot(), Dot(), Dot(), Dot()],
-  7: [Bar(), Bar(), Dot(), Dot(), Dot()],
-  8: [Bar(), Bar(), Bar(), Dot(), Dot()],
-  9: [Bar(), Bar(), Bar(), Bar(), Dot()],
-  0: [Bar(), Bar(), Bar(), Bar(), Bar()],
+  A: [Dot, Bar],
+  B: [Bar, Dot, Dot, Dot],
+  C: [Bar, Dot, Bar, Dot],
+  D: [Bar, Dot, Dot],
+  E: [Dot],
+  F: [Dot, Dot, Bar, Dot],
+  G: [Bar, Bar, Dot],
+  H: [Dot, Dot, Dot, Dot],
+  I: [Dot, Dot],
+  J: [Dot, Bar, Bar, Bar],
+  K: [Bar, Dot, Bar],
+  L: [Dot, Bar, Dot, Dot],
+  M: [Bar, Bar],
+  N: [Bar, Dot],
+  O: [Bar, Bar, Bar],
+  P: [Dot, Bar, Bar, Dot],
+  Q: [Bar, Bar, Dot, Bar],
+  R: [Dot, Bar, Dot],
+  S: [Dot, Dot, Dot],
+  T: [Bar],
+  U: [Dot, Dot, Bar],
+  V: [Dot, Dot, Dot, Bar],
+  W: [Dot, Bar, Bar],
+  X: [Bar, Dot, Dot, Bar],
+  Y: [Bar, Dot, Bar, Bar],
+  Z: [Bar, Bar, Dot, Dot],
+  1: [Dot, Bar, Bar, Bar, Bar],
+  2: [Dot, Dot, Bar, Bar, Bar],
+  3: [Dot, Dot, Dot, Bar, Bar],
+  4: [Dot, Dot, Dot, Dot, Bar],
+  5: [Dot, Dot, Dot, Dot, Dot],
+  6: [Bar, Dot, Dot, Dot, Dot],
+  7: [Bar, Bar, Dot, Dot, Dot],
+  8: [Bar, Bar, Bar, Dot, Dot],
+  9: [Bar, Bar, Bar, Bar, Dot],
+  0: [Bar, Bar, Bar, Bar, Bar],
 };
 
 function Bar() {
@@ -99,7 +99,11 @@ function MorseLetter({ char }: { char: string }) {
 
   return (
     <div className="flex flex-row gap-1 mr-2 text-black">
-      {MORSE_MAPPING[upperChar as keyof typeof MORSE_MAPPING]}
+      {MORSE_MAPPING[upperChar as keyof typeof MORSE_MAPPING].map(
+        (Element, i) => (
+          <Element key={i} />
+        )
+      )}
     </div>
   );
 }

@@ -12,7 +12,9 @@ function Component() {
 
   return (
     <div className="flex flex-col gap-4 items-center">
-      <div className="text-4xl italic">Welcome to Advent of Manon 2024 !</div>
+      <div className="flex flex-row text-wrap justify-center text-center text-4xl italic">
+        <p>Welcome to Advent of Manon 2024 !</p>
+      </div>
 
       {nextPath !== null && (
         <Link

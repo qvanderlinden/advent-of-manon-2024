@@ -2,632 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+	height: 100vh;
+	display: flex;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-body {
-	background-color: #a1b8ce;
-	height: 100vh;
-	display: flex;
-	overflow: hidden;
-}
-
-.fa-star {
-	color: #0b364f;
-}
-
-.fa-sleigh {
-	color: #06223f;
-	transform: scale(-1, 1);
-}
-
-@keyframes up {
-	0% {
-		transform: translateY(0%);
-	}
-
-	50% {
-		transform: translateY(100px);
-	}
-
-	100% {
-		transform: translateY(0);
-	}
-}
-
-@keyframes across {
-	from {
-		right: 0%;
-	}
-
-	to {
-		right: 100%;
-	}
-}
-
-.fa-snowflake {
-	color: #ecf2f8;
-}
-
-.snow {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-}
-
-.snowflake {
-	animation-name: fall, shake;
-	animation-duration: 10s, 5s;
-	animation-timing-function: linear, ease-in-out;
-	animation-iteration-count: infinite, infinite;
-	position: absolute;
-	left: 200px;
-	z-index: 7;
-	filter: blur(0.5px);
-}
-
-.snowflake1 {
-	animation-name: fall, shake;
-	animation-duration: 10s, 3s;
-	animation-timing-function: linear, ease-in-out;
-	animation-iteration-count: infinite, infinite;
-	position: absolute;
-	left: 500px;
-	top: -100px;
-	animation-delay: 1s, 1s;
-	z-index: 7;
-	filter: blur(0.5px);
-}
-
-.snowflake2 {
-	animation-name: fall, shake;
-	animation-duration: 8s, 5s;
-	animation-timing-function: linear, ease-in-out;
-	animation-iteration-count: infinite, infinite;
-	position: absolute;
-	left: 20px;
-	top: -100px;
-	animation-delay: 2s, 2s;
-	z-index: 7;
-	filter: blur(0.5px);
-}
-
-.snowflake3 {
-	animation-name: fall, shake;
-	animation-duration: 9s, 5s;
-	animation-timing-function: linear, ease-in-out;
-	animation-iteration-count: infinite, infinite;
-	position: absolute;
-	right: 170px;
-	top: -100px;
-	animation-delay: 3s, 5s;
-	z-index: 5;
-	filter: blur(0.7px);
-}
-
-.snowflake4 {
-	animation-name: fall, shake;
-	animation-duration: 15s, 5s;
-	animation-timing-function: linear, ease-in-out;
-	animation-iteration-count: infinite, infinite;
-	position: absolute;
-	right: 430px;
-	top: -100px;
-	animation-delay: 4s, 4s;
-	z-index: 5;
-}
-
-.snowflake5 {
-	animation-name: fall, shake;
-	animation-duration: 15s, 4s;
-	animation-timing-function: linear, ease-in-out;
-	animation-iteration-count: infinite, infinite;
-	position: absolute;
-	left: 500px;
-	top: -100px;
-	animation-delay: 6s, 2s;
-	font-size: 2rem;
-	z-index: 6;
-	filter: blur(0.5px);
-}
-
-.snowflake6 {
-	animation-name: fall, shake;
-	animation-duration: 12s, 5s;
-	animation-timing-function: linear, ease-in-out;
-	animation-iteration-count: infinite, infinite;
-	position: absolute;
-	left: 75px;
-	top: -100px;
-	animation-delay: 3.2s, 2s;
-	font-size: 2rem;
-	z-index: 6;
-}
-
-.snowflake7 {
-	animation-name: fall, shake;
-	animation-duration: 11s, 5s;
-	animation-timing-function: linear, ease-in-out;
-	animation-iteration-count: infinite, infinite;
-	position: absolute;
-	left: 650px;
-	top: -100px;
-	animation-delay: 7.2s, 1s;
-	z-index: 7;
-}
-
-.snowflake8 {
-	animation-name: fall, shake;
-	animation-duration: 12s, 4s;
-	animation-timing-function: linear, ease-in-out;
-	animation-iteration-count: infinite, infinite;
-	position: absolute;
-	left: 820px;
-	top: -100px;
-	animation-delay: 4s, 2s;
-	font-size: 2rem;
-	z-index: 5;
-	filter: blur(0.5px);
-}
-
-.snowflake9 {
-	animation-name: fall, shake;
-	animation-duration: 12s, 4s;
-	animation-timing-function: linear, ease-in-out;
-	animation-iteration-count: infinite, infinite;
-	position: absolute;
-	left: 170px;
-	top: -100px;
-	animation-delay: 5s, 2s;
-	font-size: 2rem;
-	z-index: 5;
-	filter: blur(0.3px);
-}
-
-.snowflake10 {
-	animation-name: fall, shake;
-	animation-duration: 15s, 9s;
-	animation-timing-function: linear, ease-in-out;
-	animation-iteration-count: infinite, infinite;
-	position: absolute;
-	left: 350px;
-	top: -100px;
-	animation-delay: 2.7s, 2s;
-	font-size: 3rem;
-	z-index: 7;
-}
-
-.snowflake11 {
-	animation-name: fall, shake;
-	animation-duration: 12s, 7s;
-	animation-timing-function: linear, ease-in-out;
-	animation-iteration-count: infinite, infinite;
-	position: absolute;
-	right: 400px;
-	top: -100px;
-	animation-delay: 0.5s, 2s;
-	font-size: 3rem;
-	z-index: 7;
-}
-
-.snowflake12 {
-	/*small*/
-	animation-name: fall, shake;
-	animation-duration: 12s, 5s;
-	animation-timing-function: linear, ease-in-out;
-	animation-iteration-count: infinite, infinite;
-	position: absolute;
-	left: 470px;
-	top: -100px;
-	animation-delay: 5s, 2s;
-	z-index: 7;
-	filter: blur(0.9px);
-}
-
-.snowflake13 {
-	/*small*/
-	animation-name: fall, shake;
-	animation-duration: 10s, 5s;
-	animation-timing-function: linear, ease-in-out;
-	animation-iteration-count: infinite, infinite;
-	position: absolute;
-	right: 220px;
-	top: -100px;
-	animation-delay: 1s, 2s;
-	z-index: 7;
-	filter: blur(0.6px);
-}
-
-.snowflake14 {
-	/*small*/
-	animation-name: fall, shake;
-	animation-duration: 9s, 4s;
-	animation-timing-function: linear, ease-in-out;
-	animation-iteration-count: infinite, infinite;
-	position: absolute;
-	right: 140px;
-	top: -100px;
-	animation-delay: 2s, 2s;
-	z-index: 7;
-	filter: blur(0.5px);
-}
-
-@keyframes fall {
-	0% {
-		top: -10%;
-	}
-
-	100% {
-		top: 100%;
-	}
-}
-
-@keyframes shake {
-	0% {
-		transform: translatex(0);
-	}
-	50% {
-		transform: translatex(50px);
-	}
-	100% {
-		transform: translatex(0);
-	}
-}
-
-.mountains {
-	width: 100%;
-}
-
-.mt1 {
-	position: absolute;
-	content: "";
-	left: 100px;
-	bottom: 0;
-	border-top: 0px solid transparent;
-	border-right: 100px solid transparent;
-	border-left: 100px solid transparent;
-	border-bottom: 200px solid #0b364f;
-	z-index: 3;
-} /*the bottom border is the only thing we see for the mts, so we give it a color. 300px is the height of the mt. All other borders should be transparent the width of the other borders will determine the angle of the triangle.*/
-
-.mtsnow1 {
-	position: absolute;
-	content: "";
-	left: -50px;
-	bottom: -100px;
-	border-top: 0px solid transparent;
-	border-right: 50px solid transparent;
-	border-left: 50px solid transparent;
-	border-bottom: 100px solid #c1cfd7;
-}
-
-.snow-peak-1a {
-	/*sharp snow edge*/
-	position: absolute;
-	content: "";
-	bottom: -130px;
-	left: -45px;
-	border-top: 30px solid #c1cfd7;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.snow-peak-1b {
-	position: absolute;
-	content: "";
-	bottom: -130px;
-	left: -7px;
-	border-top: 30px solid #c1cfd7;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.mt2 {
-	position: absolute;
-	content: "";
-	left: -20px;
-	bottom: 0;
-	border-top: 0px solid transparent;
-	border-right: 150px solid transparent;
-	border-left: 150px solid transparent;
-	border-bottom: 200px solid #094669;
-	z-index: 6;
-}
-
-.snow2 {
-	position: absolute;
-	content: "";
-	left: -75px;
-	bottom: -98px;
-	border-top: 0px solid transparent;
-	border-right: 75px solid transparent;
-	border-left: 75px solid transparent;
-	border-bottom: 100px solid #e4e8eb;
-}
-
-.snow-peak-2a {
-	position: absolute;
-	content: "";
-	bottom: -110px;
-	left: -60px;
-	border-top: 20px solid #e4e8eb;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.snow-peak-2b {
-	position: absolute;
-	content: "";
-	bottom: -120px;
-	left: -25px;
-	border-top: 30px solid #e4e8eb;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.snow-peak-2c {
-	position: absolute;
-	content: "";
-	bottom: -110px;
-	right: -60px;
-	border-top: 20px solid #e4e8eb;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.mt3 {
-	position: absolute;
-	content: "";
-	left: 280px;
-	bottom: 0;
-	border-top: 0px solid transparent;
-	border-right: 150px solid transparent;
-	border-left: 150px solid transparent;
-	border-bottom: 175px solid #094669;
-	z-index: 6;
-}
-
-.snow3 {
-	position: absolute;
-	content: "";
-	left: -70px;
-	bottom: -80px;
-	border-top: 0px solid transparent;
-	border-right: 70px solid transparent;
-	border-left: 70px solid transparent;
-	border-bottom: 90px solid #e4e8eb;
-}
-
-.snow-peak-3a {
-	position: absolute;
-	content: "";
-	bottom: -100px;
-	left: -60px;
-	border-top: 30px solid #e4e8eb;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.snow-peak-3b {
-	position: absolute;
-	content: "";
-	bottom: -100px;
-	left: -20px;
-	border-top: 30px solid #e4e8eb;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.snow-peak-3c {
-	position: absolute;
-	content: "";
-	bottom: -100px;
-	right: -20px;
-	border-top: 30px solid #e4e8eb;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.snow-peak-3d {
-	position: absolute;
-	content: "";
-	bottom: -100px;
-	right: -60px;
-	border-top: 30px solid #e4e8eb;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.mt4 {
-	position: absolute;
-	content: "";
-	left: 800px;
-	bottom: 0;
-	border-top: 0px solid transparent;
-	border-right: 150px solid transparent;
-	border-left: 150px solid transparent;
-	border-bottom: 250px solid #0b364f;
-	z-index: 3;
-}
-
-.snow4 {
-	position: absolute;
-	content: "";
-	left: -47px;
-	bottom: -75px;
-	border-top: 0px solid transparent;
-	border-right: 47px solid transparent;
-	border-left: 47px solid transparent;
-	border-bottom: 80px solid #c1cfd7;
-}
-
-.snow-peak-4a {
-	/*sharp snow edge*/
-	position: absolute;
-	content: "";
-	bottom: -100px;
-	left: -45px;
-	border-top: 30px solid #c1cfd7;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-} /* the sharp snow edge an is INVERTED triangle, so we want to see the the top border,not bottom. Top border should have a color. Other borders should be transparent*/
-
-.snow-peak-4b {
-	position: absolute;
-	content: "";
-	bottom: -100px;
-	left: -7px;
-	border-top: 30px solid #c1cfd7;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.mt5 {
-	position: absolute;
-	content: "";
-	left: 500px;
-	bottom: 0;
-	border-top: 0px solid transparent;
-	border-right: 200px solid transparent;
-	border-left: 200px solid transparent;
-	border-bottom: 150px solid #094669;
-	z-index: 6;
-}
-
-.snow5 {
-	position: absolute;
-	content: "";
-	left: -100px;
-	bottom: -75px;
-	border-top: 0px solid transparent;
-	border-right: 100px solid transparent;
-	border-left: 100px solid transparent;
-	border-bottom: 75px solid #e4e8eb;
-}
-
-.snow-peak-5a {
-	position: absolute;
-	content: "";
-	bottom: -95px;
-	left: -60px;
-	border-top: 20px solid #e4e8eb;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.snow-peak-5b {
-	position: absolute;
-	content: "";
-	bottom: -100px;
-	left: -25px;
-	border-top: 30px solid #e4e8eb;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.snow-peak-5c {
-	position: absolute;
-	content: "";
-	bottom: -95px;
-	right: -60px;
-	border-top: 20px solid #e4e8eb;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.mt6 {
-	position: absolute;
-	content: "";
-	left: 950px;
-	bottom: 0;
-	border-top: 0px solid transparent;
-	border-right: 150px solid transparent;
-	border-left: 150px solid transparent;
-	border-bottom: 175px solid #094669;
-	z-index: 6;
-}
-
-.snow6 {
-	position: absolute;
-	content: "";
-	left: -70px;
-	bottom: -80px;
-	border-top: 0px solid transparent;
-	border-right: 70px solid transparent;
-	border-left: 70px solid transparent;
-	border-bottom: 90px solid #e4e8eb;
-}
-
-.snow-peak-6a {
-	position: absolute;
-	content: "";
-	bottom: -100px;
-	left: -60px;
-	border-top: 30px solid #e4e8eb;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.snow-peak-6b {
-	position: absolute;
-	content: "";
-	bottom: -100px;
-	left: -20px;
-	border-top: 30px solid #e4e8eb;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.snow-peak-6c {
-	position: absolute;
-	content: "";
-	bottom: -100px;
-	right: -20px;
-	border-top: 30px solid #e4e8eb;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
-}
-
-.snow-peak-6d {
-	position: absolute;
-	content: "";
-	bottom: -100px;
-	right: -60px;
-	border-top: 30px solid #e4e8eb;
-	border-right: 25px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 25px solid transparent;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

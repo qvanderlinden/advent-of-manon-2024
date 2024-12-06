@@ -24,6 +24,7 @@ export default function Home() {
           Namurois.
         </p>
         <Button className="w-fit">
+          <Image src="/img/spotify.png" width={24} height={24} alt="Spotify" />
           <a href="https://open.spotify.com/playlist/0tnigD06FDi96LK2J42jzP?si=82dc018a057944a2">
             Ouvrir sur Spotify
           </a>

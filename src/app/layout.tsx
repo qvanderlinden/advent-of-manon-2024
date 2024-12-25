@@ -28,7 +28,9 @@ export default function RootLayout({
         name="viewport"
         content="width=device-width, initial-scale=1, viewport-fit=cover"
       />
-      <body className={`p-safe m-0 h-full w-full ${christmas.className}`}>
+      <body
+        className={`p-safe m-0 box-border h-full w-full ${christmas.className}`}
+      >
         <div className="absolute w-full h-full overflow-hidden z-0">
           <ChristmasBackground />
         </div>

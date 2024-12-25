@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`m-0 mb-safe mt-safe pl-0 pr-0 min-h-screen w-full ${christmas.className}`}
+        className={`m-safe pr-0 min-h-screen w-full ${christmas.className}`}
       >
         <div className="absolute w-full h-full overflow-hidden z-0">
           <ChristmasBackground />

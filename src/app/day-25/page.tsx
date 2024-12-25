@@ -71,43 +71,41 @@ function Component() {
             </Popup>
           )}
         </Map>
-        <div className="mb-4">
-          <Button
-            className="w-fit"
-            disabled={step === 2}
-            onClick={() => {
-              const nextStop: LngLatLike =
-                step === 0
-                  ? [STOP_1_LONGITUDE, STOP_1_LATITUDE]
-                  : [STOP_2_LONGITUDE, STOP_2_LATITUDE];
+        <Button
+          className="w-fit absolute bottom-4"
+          disabled={step === 2}
+          onClick={() => {
+            const nextStop: LngLatLike =
+              step === 0
+                ? [STOP_1_LONGITUDE, STOP_1_LATITUDE]
+                : [STOP_2_LONGITUDE, STOP_2_LATITUDE];
 
-              myMap?.flyTo({
-                center: nextStop,
-                zoom: 16,
-              });
-              setStep((step) => step + 1);
-            }}
-          >
-            {step === 0 && (
-              <>
-                <FontAwesomeIcon size="2x" icon={faPlay} />
-                Show me where we&apos;re going !
-              </>
-            )}
-            {step === 1 && (
-              <>
-                <FontAwesomeIcon size="2x" icon={faArrowRight} />
-                What&apos;s next ?
-              </>
-            )}
-            {step === 2 && (
-              <>
-                <FontAwesomeIcon size="2x" icon={faGift} />
-                Merry Christmas !
-              </>
-            )}
-          </Button>
-        </div>
+            myMap?.flyTo({
+              center: nextStop,
+              zoom: 16,
+            });
+            setStep((step) => step + 1);
+          }}
+        >
+          {step === 0 && (
+            <>
+              <FontAwesomeIcon size="2x" icon={faPlay} />
+              Show me where we&apos;re going !
+            </>
+          )}
+          {step === 1 && (
+            <>
+              <FontAwesomeIcon size="2x" icon={faArrowRight} />
+              What&apos;s next ?
+            </>
+          )}
+          {step === 2 && (
+            <>
+              <FontAwesomeIcon size="2x" icon={faGift} />
+              Merry Christmas !
+            </>
+          )}
+        </Button>
       </div>
     </div>
   );

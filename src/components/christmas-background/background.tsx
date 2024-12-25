@@ -3,7 +3,7 @@ import Snowflake from "./snowflake";
 
 const ChristmasBackground: React.FC = () => {
   const snowflakes = useMemo(() => {
-    return Array.from({ length: 100 }).map((_, i) => {
+    return Array.from({ length: 30 }).map((_, i) => {
       const animationDuration = Math.random() * 10 + 10;
       const top = Math.random() * 100;
       const animationDelay = -(top / 120) * animationDuration;

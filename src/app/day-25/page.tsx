@@ -72,7 +72,7 @@ function Component() {
           )}
         </Map>
         <Button
-          className="w-fit absolute bottom-4"
+          className="w-fit absolute bottom-4 text-2xl"
           disabled={step === 2}
           onClick={() => {
             const nextStop: LngLatLike =

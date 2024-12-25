@@ -29,9 +29,9 @@ function Component() {
   console.log(showPopup);
 
   return (
-    <div className="grid grid-rows-[auto_1fr] gap-4 place-items-center">
+    <div className="w-full h-full grid grid-rows-[auto_1fr] gap-4 place-items-center">
       <div className="text-4xl italic w-fit">Day 25</div>
-      <div className="bg-white text-black rounded-lg flex flex-col items-center gap-4 overflow-hidden relative w-96 h-96">
+      <div className="w-full h-full bg-white text-black rounded-lg flex flex-col items-center gap-4 overflow-hidden relative">
         <Map
           id="myMap"
           mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
@@ -39,11 +39,6 @@ function Component() {
             longitude: HOME_LONGITUDE,
             latitude: HOME_LATITUDE,
             zoom: 16,
-          }}
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "100%",
           }}
           mapStyle="mapbox://styles/mapbox/standard"
         >

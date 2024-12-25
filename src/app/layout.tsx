@@ -24,12 +24,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`m-0 p-0 min-h-screen w-full ${christmas.className}`}>
+      <body
+        className={`m-0 pb-safe pt-safe pl-0 pr-0 min-h-screen w-full ${christmas.className}`}
+      >
         <div className="absolute w-full h-full overflow-hidden z-0">
           <ChristmasBackground />
         </div>
         <div className="w-full h-full grid grid-rows-[20px_1fr_20px] grid-cols-[20px_1fr_20px] items-center justify-items-center z-10">
-          <div className="row-start-2 col-start-2 text-white">{children}</div>
+          <div className="w-full h-full row-start-2 col-start-2 text-white">
+            {children}
+          </div>
         </div>
       </body>
     </html>

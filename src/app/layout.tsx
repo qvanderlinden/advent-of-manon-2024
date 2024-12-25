@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import ChristmasBackground from "@/components/christmas-background/background";
 import "./globals.css";
+import "mapbox-gl/dist/mapbox-gl.css";
+
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 
 const christmas = localFont({
   src: "./fonts/ChristmasBell.otf",
